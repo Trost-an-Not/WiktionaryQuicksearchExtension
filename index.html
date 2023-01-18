@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <title>Wiktionary QuickSearch Plus</title>
+        <author></author> 
+        <meta http-equiv="X-UA-COmpatible" content="IE=edge">
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <main class="flexmain spaced minmedium top-rounded">
+          <input class="rounded" type="text" id="input-main">
+          <div class="flexmain rounded">
+            <button class = "rounded" id="search-btn">Search</button>
+
+            <button type="button" class = "rounded" id="target-lang-btn">Select Target Language</button>
+            
+            <button  type ="button" class = "rounded" id="show-history-btn">Show History</button>
+
+          </div>
+        </main>  
+        
+        <section class="minmedium">
+          <div class = "collapse minmedium">
+          <div class="box1 minmedium column"> 
+            <div class="nowrap minmedium"> 
+              <p  class="flex minmedium">
+                <span id="lang-show">
+                Current Language: None
+                </span> 
+                <!-- 
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp 
+                had trouble aligning using span-->
+                <span class="flex right">
+                  <span>
+                Proper: 
+                  </span>
+                <label class="switch"> 
+                  <input type="checkbox" id="properness-checkbox">
+                  <span class="slider round"></span>
+                </label></p> 
+                </span>
+              
+              
+            </div>
+            <span class="nowrap minmedium">
+          <button type="button" class = "rounded" id="submit-lang-btn">Confirm</button> 
+          <input class="rounded" type="text" id="input-lang"> 
+            </span>
+          </div>
+        </div>
+
+        </section>
+
+        <section class="dropdown column" > <!--here the parent disappears or appears-->
+          <div class="box2 minmedium bottom-rounded"> <!--here the child grows or collapses-->
+            <ul id="history-list">
+              <li> hello <div class="square"></div></li>
+              <li> hello <div class="square"></div></li>
+              <li> hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello <span class="delete">&times;</span>
+              <li> hello <span class="delete">&times;</span></li>
+              <li> hello <span class="delete">&times;</span></li>
+            
+            </ul>
+              
+          </div>
+        </section>
+        <script type="module" src="index.js"></script>
+        <!--<script type="module" src="background.js"></script> -->
+        
+        
+       
+    </body>
+</html>

@@ -1,0 +1,324 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+/*Universal Selector*/
+* {
+overflow-wrap: break-word; /*prevents overflow*/
+max-width: calc(50% - 2px);
+font-weight: 1000;
+}
+
+/*Variables*/
+:root{
+  --INSIDECOLORHOVER: grey; 
+  --BGCOLOR: white ;
+  --INSIDECOLOR: black ;
+  --DROPDOWNSTATUS: none;
+  --COLLAPSED: none;
+  --UPDOWN-COLLAPSED: drop 0.5s ease-in-out forwards;
+  --UPDOWN-DROPDOWN: drop 0.5s ease-in-out forwards;
+  --YBOX1: scaleY(0);
+  --YBOX2: scaleY(0);
+}
+
+/* Modifiers */
+
+
+.collapse {
+  display: var(--COLLAPSED);
+  
+
+}
+
+
+
+.dropdown {
+  display: var(--DROPDOWNSTATUS);
+  
+  
+  
+}
+
+.rounded {
+  border-radius: 0.7em;
+
+}
+
+.top-rounded{
+  border-radius: 0.7em 0.7em 0em 0em;
+}
+.bottom-rounded{
+  border-radius: 0em 0em 0.7em 0.7em;
+}
+
+.spaced {
+  justify-content: space-around;
+  gap: 3px;
+  
+}
+
+.centered{
+  align-items: center;
+}
+
+.minmedium{
+  min-width: 500px;
+}
+
+.minsmall{
+  min-width: 250px;
+}
+
+.entry {
+  max-width: 200px;
+  height: auto;
+  margin: 0px;
+}
+
+
+
+.box1 {
+  display: flex;
+  border: 1px solid ;
+  padding: 3px;
+  max-width: 500px;
+  min-width: 500px;
+  transform: var(--YBOX1);
+  transform-origin: top;
+  transition: all 0.5s linear;
+  box-shadow: 2px 2px;
+}
+
+.box2 {
+  border: 1px solid ;
+  padding: 3px;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 500px;
+  transform: var(--YBOX2);
+  transform-origin: top;
+  transition: all 0.5s linear;
+  overflow-y: auto; /*adds scrollbar*/
+  box-shadow: 2px 2px;
+}
+
+
+.flexmain {
+  display: flex;
+  justify-content: left;
+  flex-wrap: nowrap;
+  border: 1px solid ;
+  padding: 3px;
+  box-shadow: 2px 2px;
+
+}
+.nowrap {
+  flex-wrap: nowrap;
+
+}
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1 1;
+}
+
+.in{
+  display: inline-block;
+}
+
+.delete {
+  font-size: large;
+  width: 5px;
+}
+
+.delete:hover {
+  cursor: pointer;
+  width: 5px;
+  color: red;
+}
+
+.column{
+
+  flex-direction: column;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.right{
+justify-content: flex-end;
+gap: 10px;
+}
+
+
+/* ID selectors */
+
+#show-history-btn:hover .dropdown {
+  display: block;
+}
+
+#show-history-btn{
+  display: inline-block;
+
+}
+
+#input-lang{
+  max-width: 400px;
+}
+
+/* Element selectors */
+
+
+
+body {
+  margin: 2px;
+  padding: 10px;
+  font-family: 'Fira Code', monospace; 
+  background-color: var(--BGCOLOR);
+  min-width: 400px;
+}
+
+ul{
+  min-width: 400px;
+  margin: 0%;
+}
+
+li{
+  min-width: 460px;
+  padding: 0%;
+  margin: 0%;
+}
+
+li:hover {
+ background-color: grey;
+ border-radius: 0.25em;
+}
+
+ul li::before{
+  background-color: grey;
+}
+
+input {
+  font-family: 'Fira Code', monospace; 
+  text-align: center;
+  min-width: 275px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; 
+  color: var(--BGCOLOR);
+  border: 1px solid var(--BGCOLOR);
+  background-color:var(--INSIDECOLOR);
+  margin-bottom: 5px;
+}
+
+button {
+  font-family: 'Fira Code', monospace;
+  background: var(--INSIDECOLOR);
+  color: var(--BGCOLOR);
+  padding: 5px;
+  border: 2px solid var(--BGCOLOR);
+  font-weight: bold;
+
+}
+
+button:hover{
+  color: var(--INSIDECOLORHOVER);
+  cursor: pointer;
+}
+
+/* Animations */
+
+@keyframes drop {
+  0% {
+    transform: scaleY(0);
+  }
+
+  50% {
+    transform: scaleY(0.5);
+  }
+  
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes lift {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.5);
+  }
+  
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+/*Slider*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 33px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  background-color:grey;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0px ;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

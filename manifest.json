@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "version": "0.0.5",
+  "name": "Wiktionary Quicksearch Plus",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "QSPlusIcon.png"
+    
+  },
+
+  "icons": {
+    "120": "QSPlusIcon.png"
+  },
+
+  "permissions": [
+    "contextMenus", "storage"
+  ],
+
+   "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
