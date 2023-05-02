@@ -49,7 +49,9 @@
             </div>
             <span class="nowrap minmedium">
           <button type="button" class = "rounded" id="submit-lang-btn">Confirm</button> 
-          <input class="rounded" type="text" id="input-lang"> 
+          <input class="rounded" type="text" id="input-lang" list="languages">
+          <datalist id="languages">
+          </datalist>
             </span>
           </div>
         </div>
@@ -59,17 +61,16 @@
         <section class="dropdown column" > <!--here the parent disappears or appears-->
           <div class="box2 minmedium bottom-rounded"> <!--here the child grows or collapses-->
             <ul id="history-list">
-              <li> hello <div class="square"></div></li>
-              <li> hello <div class="square"></div></li>
-              <li> hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello <span class="delete">&times;</span>
-              <li> hello <span class="delete">&times;</span></li>
-              <li> hello <span class="delete">&times;</span></li>
+
             
             </ul>
               
           </div>
         </section>
         <script type="module" src="index.js"></script>
+        <script type="module" src="languagesDatalist.js"></script>
+        <script type="module" src="background.js"></script>
+
         <!--<script type="module" src="background.js"></script> -->
         
         
